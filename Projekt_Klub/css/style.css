@@ -1,0 +1,370 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #05051a, #0c0c30);
+  color: #fff;
+  scroll-behavior: smooth;
+}
+
+.glass-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  color: #0ff;
+  font-weight: bold;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #ccc;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s;
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #0ff;
+  bottom: -4px;
+  left: 0;
+  transition: 0.4s ease;
+}
+
+nav ul li a:hover {
+  color: #0ff;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(to bottom, #0ff2, transparent);
+}
+
+.hero h2 {
+  font-size: 42px;
+  color: #0ff;
+  margin-bottom: 20px;
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+.hero p {
+  color: #ccc;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.start-button {
+  background: #0ff;
+  padding: 12px 24px;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.start-button:hover {
+  background: #00aacc;
+  color: #fff;
+}
+
+.club {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 40px;
+  gap: 50px;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s all ease;
+}
+
+.club.reverse {
+  flex-direction: row-reverse;
+}
+
+.club img {
+  width: 200px;
+  height: auto;
+  filter: drop-shadow(0 0 20px #0ff);
+  transition: transform 0.3s ease;
+}
+
+.club img:hover {
+  transform: scale(1.05);
+}
+
+.club-text {
+  max-width: 400px;
+}
+
+.club-text h3 {
+  color: #0ff;
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.club-text p {
+  color: #bbb;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.club-text a {
+  color: #0ff;
+  text-decoration: underline;
+}
+
+.contact {
+  padding: 60px 20px;
+  text-align: center;
+  background: #111;
+}
+
+.contact h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #0ff;
+}
+
+.contact p {
+  color: #ccc;
+}
+
+footer {
+  background: #000;
+  text-align: center;
+  padding: 20px;
+  color: #666;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+.evolution {
+  padding: 80px 40px;
+  background: #0a0a0a;
+  color: #f0f0f0;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 60px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #00ffff;
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+}
+
+.evolution-container {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  position: relative;
+}
+
+.evolution-text {
+  flex: 1;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  z-index: 1;
+}
+
+.evolution-text h3 {
+  margin-top: 40px;
+  font-size: 1.7rem;
+  color: #00ffff;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
+}
+
+.evolution-text p {
+  margin-top: 15px;
+  color: #ccc;
+  font-size: 1.05rem;
+}
+
+.evolution-img {
+  width: 250px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  object-fit: cover;
+  opacity: 0.9;
+  z-index: 0;
+}
+
+.left-img {
+  margin-top: 20px;
+  align-self: flex-start;
+}
+
+.right-img {
+  margin-top: 100px;
+  align-self: flex-end;
+}
+
+@media (max-width: 1000px) {
+  .evolution-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .evolution-img {
+    display: none;
+  }
+}
+
+
+a{
+  text-decoration: none;
+}
+
+
+.real-section {
+  padding: 80px 40px;
+  background-color: #0e0e0e;
+  color: #f0f0f0;
+  border-bottom: 1px solid #222;
+}
+
+.real-section h2 {
+  font-size: 2.5rem;
+  color: #00c3ff;
+  text-align: center;
+  margin-bottom: 40px;
+  text-shadow: 0 0 10px rgba(0, 195, 255, 0.6);
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.content p {
+  flex: 1;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #ccc;
+}
+
+.side-image {
+  width: 320px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 195, 255, 0.3);
+  object-fit: cover;
+}
+
+.left {
+  order: -1;
+}
+
+@media (max-width: 900px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .side-image {
+    width: 90%;
+  }
+}
+
+
+/* Pojawiająca się sekcja po przewinięciu */
+.real-section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.7s ease;
+}
+.real-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Styl aktywnego linka */
+nav a.active-link {
+  color: #ff4c4c;
+  border-bottom: 2px solid #ff4c4c;
+}
+
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  margin: 40px 0;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 10;
+  color: #fff;
+  animation: glow 2.5s ease-in-out infinite alternate;
+  font-family: 'Orbitron', sans-serif; /* Możesz dodać Orbitron z Google Fonts */
+}
+
+.logo a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.logo a:hover {
+  color: #00ffe1;
+  text-shadow: 0 0 10px #00ffe1, 0 0 20px #00ffe1, 0 0 30px #00ffe1;
+}
+
+/* Efekt neonowego błysku */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+  }
+  to {
+    text-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff, 0 0 60px #00f0ff;
+  }
+}
