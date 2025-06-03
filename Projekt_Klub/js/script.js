@@ -2,10 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll(".club");
 
   function revealOnScroll() {
-    const triggerBottom = window.innerHeight * 0.85;
+    const trigger = window.innerHeight * 0.85;
     sections.forEach(sec => {
       const top = sec.getBoundingClientRect().top;
-      if (top < triggerBottom) {
+      if (top < trigger) {
         sec.style.opacity = "1";
         sec.style.transform = "translateY(0)";
       }
@@ -17,17 +17,20 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
+function pokazSekcje() {
+  document.querySelectorAll('.real-section').forEach(sekcja => {
+    const odleglosc = sekcja.getBoundingClientRect().top;
+    const wysokoscOkna = window.innerHeight;
+
+    if (odleglosc < wysokoscOkna) {
+      sekcja.classList.add('show');
     }
   });
-});
+}
 
-document.querySelectorAll('.real-section').forEach(section => {
-  observer.observe(section);
-});
+window.addEventListener('scroll', pokazSekcje);
+pokazSekcje();
+
 
 
 
